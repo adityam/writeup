@@ -1,22 +1,10 @@
 \startmodule  writeup
 
-\definefontfeature
-    [default][default]
-    [protrusion=quality,expansion=quality,mode=node,script=latn]
-
-\definefontfeature
-    [oldstyle][default]
-    [protrusion=quality,expansion=quality,mode=node,script=latn,onum=yes]
-
-\definefontfeature
-    [smallcaps][default]
-    [protrusion=quality,expansion=quality,mode=node,script=latn,smcp=yes]
+\usemodule  [simplefonts][size=10pt]
+\setmainfont[Fontin][expansion=quality,protrusion=quality]
+\setmathfont[Cambria]
 
 \setupalign     [hanging] 
-
-\usemodule  [simplefonts][size=10pt,features=default]
-\setmainfont[Fontin]
-\setmathfont[Cambria]
 
 \definesimplefont [NameFont]    [FontinBold][size=16pt]         
 \definesimplefont [subjectfont] [FontinBold][size=12pt]
