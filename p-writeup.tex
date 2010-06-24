@@ -21,8 +21,6 @@
 \definesimplefont [NameFont]    [FontinBold][size=16pt]         
 \definesimplefont [subjectfont] [FontinBold][size=12pt]
 
-\definefontsynonym[initial][name:fontin]
-
 \setuppapersize [letter][letter]
 \setuplayout[
                    width=middle,
@@ -75,6 +73,8 @@
 \setupitemize
   [headstyle=\bolditalic]
         
+\definefontsynonym[initial][name:fontin]
+
 \setupinitial
   [   state=start,
           n=3,
