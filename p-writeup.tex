@@ -114,6 +114,14 @@
 
 \setupmathematics[autopunctuation=no]
 
+\setupformulas   [indentnext=auto,
+                 numberstyle=normal, 
+                 spacebefore={disable,none},
+                  spaceafter={none}]
+
+\defineformula  [star]
+                [numberconversion={set 1}]
+
 \def\ALPHABET#1{{\mathbb #1}}
 \def\FIELD   #1{{\mathcal #1}}
 
