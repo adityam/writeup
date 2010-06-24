@@ -1,0 +1,118 @@
+\startmodule  writeup
+
+\definefontfeature
+    [default][default]
+    [protrusion=quality,expansion=quality,mode=node,script=latn]
+
+\definefontfeature
+    [oldstyle][default]
+    [protrusion=quality,expansion=quality,mode=node,script=latn,onum=yes]
+
+\definefontfeature
+    [smallcaps][default]
+    [protrusion=quality,expansion=quality,mode=node,script=latn,smcp=yes]
+
+\setupalign     [hanging] 
+
+\usemodule  [simplefonts][size=10pt,features=default]
+\setmainfont[Fontin]
+\setmathfont[Cambria]
+
+\definesimplefont [NameFont]    [FontinBold][size=16pt]         
+\definesimplefont [subjectfont] [FontinBold][size=12pt]
+
+\definefontsynonym[initial][name:fontin]
+
+\setuppapersize [letter][letter]
+\setuplayout[
+                   width=middle,
+                  height=middle,
+                location=middle,
+                topspace=.5in,
+             bottomspace=.5in,
+                  bottom=.5in,
+               backspace=.85in,
+                cutspace=.85in,
+              leftmargin=.5in,
+             rightmargin=.5in,
+      leftmargindistance=1ex,
+     rightmargindistance=1ex,
+                  header=0.25in,
+                  footer=0.25in,
+           headerdistance=0.25in,
+          footerdistance=0.25in,
+        ]
+
+\setupheader[style=italic]
+
+\setuppagenumbering[location=footer, command=\PAGECOMMAND]
+\def\PAGECOMMAND#1{Page #1 of \lastpage}
+
+\setupblank       [medium]
+\setupwhitespace  [medium]
+\setupindenting   [medium,yes]
+
+
+\definehead[initialtitle][title]
+
+\setuphead[title,initialtitle]
+          [alternative=middle,
+             textstyle=\NameFont,
+                header=empty,
+          ]
+
+\setuphead[initialtitle]
+          [after=\placeinitial]
+
+
+\setuphead[subject,section,subsubject,subsection]
+          [%style=\tfa,
+       textstyle=\subjectfont,
+          before={\blank[big]},
+           after={\blank[small]},
+          ]
+
+\setupitemize
+  [headstyle=\bolditalic]
+        
+\setupinitial
+  [   state=start,
+          n=3,
+   distance=-.1pc,
+  ]
+
+\definealternativestyle [emph]     [\em]     []
+
+\definebodyfontenvironment
+  [default]
+  [emph=italic]
+
+\setupdescriptions
+  [        title=yes,
+         stopper=.,
+        location=serried,
+           width=broad,
+           style=italic,
+   titledistance=1ex,
+        distance=0.5em,
+      indentnext=yes,
+       indenting=yes,
+  ]
+
+\definedescription[proclaim]
+
+\definedescription
+  [proof]
+  [closesymbol=\math{\square},
+         style=normal,
+     headstyle=bolditalic,
+  ]
+
+\usemodule [mathsets]
+\definemathset[EXP][text={\mathbb E}, left=\{, right=\}]
+\definemathset[PR][text={\text{Prob}}, left=(, right=)]
+
+\setupmathematics[autopunctuation=no]
+
+
+\stopmodule
